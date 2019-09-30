@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		87097E122341E0B000AEDA0F /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87097E112341E0B000AEDA0F /* CustomTextField.swift */; };
 		8EFD96FF23251FE40087866B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFD96FE23251FE40087866B /* AppDelegate.swift */; };
 		8EFD970123251FE40087866B /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFD970023251FE40087866B /* RegistrationViewController.swift */; };
 		8EFD970423251FE40087866B /* Registration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EFD970223251FE40087866B /* Registration.storyboard */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		87097E112341E0B000AEDA0F /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		8EFD96FB23251FE40087866B /* diplomaiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = diplomaiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EFD96FE23251FE40087866B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8EFD970023251FE40087866B /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				8EFD96FE23251FE40087866B /* AppDelegate.swift */,
 				8EFD970523251FE50087866B /* Assets.xcassets */,
 				8EFD970A23251FE50087866B /* Info.plist */,
+				87097E112341E0B000AEDA0F /* CustomTextField.swift */,
 			);
 			path = diplomaiOS;
 			sourceTree = "<group>";
@@ -178,6 +181,7 @@
 			files = (
 				8EFD970123251FE40087866B /* RegistrationViewController.swift in Sources */,
 				8EFD97192325388B0087866B /* AKConverter.swift in Sources */,
+				87097E122341E0B000AEDA0F /* CustomTextField.swift in Sources */,
 				8EFD9717232534B80087866B /* VideHelper.swift in Sources */,
 				8EFD96FF23251FE40087866B /* AppDelegate.swift in Sources */,
 				8EFD9714232532F10087866B /* VideoCaptureViewController.swift in Sources */,
@@ -327,7 +331,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = X657VTA3ND;
+				DEVELOPMENT_TEAM = 5B69Y52AXL;
 				INFOPLIST_FILE = diplomaiOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -345,7 +349,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = X657VTA3ND;
+				DEVELOPMENT_TEAM = 5B69Y52AXL;
 				INFOPLIST_FILE = diplomaiOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
