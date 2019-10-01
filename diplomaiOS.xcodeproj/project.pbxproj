@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		87097E122341E0B000AEDA0F /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87097E112341E0B000AEDA0F /* CustomTextField.swift */; };
+		87F2B5212343453600D751D2 /* Authorization.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87F2B5202343453600D751D2 /* Authorization.storyboard */; };
+		87F2B5252343480500D751D2 /* ResultAuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F2B5242343480500D751D2 /* ResultAuthorizationViewController.swift */; };
+		87F2B5272343539B00D751D2 /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F2B5262343539B00D751D2 /* AlertHelper.swift */; };
 		8EFD96FF23251FE40087866B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFD96FE23251FE40087866B /* AppDelegate.swift */; };
 		8EFD970123251FE40087866B /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFD970023251FE40087866B /* RegistrationViewController.swift */; };
 		8EFD970423251FE40087866B /* Registration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EFD970223251FE40087866B /* Registration.storyboard */; };
@@ -20,6 +23,9 @@
 
 /* Begin PBXFileReference section */
 		87097E112341E0B000AEDA0F /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		87F2B5202343453600D751D2 /* Authorization.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authorization.storyboard; sourceTree = "<group>"; };
+		87F2B5242343480500D751D2 /* ResultAuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultAuthorizationViewController.swift; sourceTree = "<group>"; };
+		87F2B5262343539B00D751D2 /* AlertHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
 		8EFD96FB23251FE40087866B /* diplomaiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = diplomaiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EFD96FE23251FE40087866B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8EFD970023251FE40087866B /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
@@ -86,6 +92,7 @@
 			children = (
 				8EFD970223251FE40087866B /* Registration.storyboard */,
 				8EFD970723251FE50087866B /* LaunchScreen.storyboard */,
+				87F2B5202343453600D751D2 /* Authorization.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -95,6 +102,7 @@
 			children = (
 				8EFD970023251FE40087866B /* RegistrationViewController.swift */,
 				8EFD9713232532F10087866B /* VideoCaptureViewController.swift */,
+				87F2B5242343480500D751D2 /* ResultAuthorizationViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -104,6 +112,7 @@
 			children = (
 				8EFD9716232534B80087866B /* VideHelper.swift */,
 				8EFD97182325388B0087866B /* AKConverter.swift */,
+				87F2B5262343539B00D751D2 /* AlertHelper.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -168,6 +177,7 @@
 			files = (
 				8EFD970923251FE50087866B /* LaunchScreen.storyboard in Resources */,
 				8EFD970623251FE50087866B /* Assets.xcassets in Resources */,
+				87F2B5212343453600D751D2 /* Authorization.storyboard in Resources */,
 				8EFD970423251FE40087866B /* Registration.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -179,9 +189,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87F2B5252343480500D751D2 /* ResultAuthorizationViewController.swift in Sources */,
 				8EFD970123251FE40087866B /* RegistrationViewController.swift in Sources */,
 				8EFD97192325388B0087866B /* AKConverter.swift in Sources */,
 				87097E122341E0B000AEDA0F /* CustomTextField.swift in Sources */,
+				87F2B5272343539B00D751D2 /* AlertHelper.swift in Sources */,
 				8EFD9717232534B80087866B /* VideHelper.swift in Sources */,
 				8EFD96FF23251FE40087866B /* AppDelegate.swift in Sources */,
 				8EFD9714232532F10087866B /* VideoCaptureViewController.swift in Sources */,
