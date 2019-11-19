@@ -11,6 +11,11 @@
 		87F2B5212343453600D751D2 /* Authorization.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87F2B5202343453600D751D2 /* Authorization.storyboard */; };
 		87F2B5252343480500D751D2 /* ResultAuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F2B5242343480500D751D2 /* ResultAuthorizationViewController.swift */; };
 		87F2B5272343539B00D751D2 /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F2B5262343539B00D751D2 /* AlertHelper.swift */; };
+		8E601FCA2343EE16002A3AA0 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E601FC92343EE16002A3AA0 /* AudioManager.swift */; };
+		8E601FCD2343EE60002A3AA0 /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E601FCC2343EE60002A3AA0 /* Sound.swift */; };
+		8E601FCF2343EFE9002A3AA0 /* OpenHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E601FCE2343EFE9002A3AA0 /* OpenHelper.swift */; };
+		8E601FD12343F0F5002A3AA0 /* NormalizationAndLatentPeriodsRemover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E601FD02343F0F5002A3AA0 /* NormalizationAndLatentPeriodsRemover.swift */; };
+		8E601FD32343F37C002A3AA0 /* DynamicProgramming.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E601FD22343F37C002A3AA0 /* DynamicProgramming.swift */; };
 		8EFD96FF23251FE40087866B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFD96FE23251FE40087866B /* AppDelegate.swift */; };
 		8EFD970123251FE40087866B /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFD970023251FE40087866B /* RegistrationViewController.swift */; };
 		8EFD970423251FE40087866B /* Registration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EFD970223251FE40087866B /* Registration.storyboard */; };
@@ -26,6 +31,11 @@
 		87F2B5202343453600D751D2 /* Authorization.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authorization.storyboard; sourceTree = "<group>"; };
 		87F2B5242343480500D751D2 /* ResultAuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultAuthorizationViewController.swift; sourceTree = "<group>"; };
 		87F2B5262343539B00D751D2 /* AlertHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
+		8E601FC92343EE16002A3AA0 /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
+		8E601FCC2343EE60002A3AA0 /* Sound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sound.swift; sourceTree = "<group>"; };
+		8E601FCE2343EFE9002A3AA0 /* OpenHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenHelper.swift; sourceTree = "<group>"; };
+		8E601FD02343F0F5002A3AA0 /* NormalizationAndLatentPeriodsRemover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalizationAndLatentPeriodsRemover.swift; sourceTree = "<group>"; };
+		8E601FD22343F37C002A3AA0 /* DynamicProgramming.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicProgramming.swift; sourceTree = "<group>"; };
 		8EFD96FB23251FE40087866B /* diplomaiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = diplomaiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EFD96FE23251FE40087866B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8EFD970023251FE40087866B /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +59,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8E601FCB2343EE4A002A3AA0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8E601FCC2343EE60002A3AA0 /* Sound.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		8EFD96F223251FE40087866B = {
 			isa = PBXGroup;
 			children = (
@@ -68,6 +86,7 @@
 		8EFD96FD23251FE40087866B /* diplomaiOS */ = {
 			isa = PBXGroup;
 			children = (
+				8E601FCB2343EE4A002A3AA0 /* Model */,
 				8EFD9715232534AC0087866B /* Util */,
 				8EFD9712232532C60087866B /* Controllers */,
 				8EFD97102325329D0087866B /* UserInterface */,
@@ -113,6 +132,10 @@
 				8EFD9716232534B80087866B /* VideHelper.swift */,
 				8EFD97182325388B0087866B /* AKConverter.swift */,
 				87F2B5262343539B00D751D2 /* AlertHelper.swift */,
+				8E601FC92343EE16002A3AA0 /* AudioManager.swift */,
+				8E601FCE2343EFE9002A3AA0 /* OpenHelper.swift */,
+				8E601FD02343F0F5002A3AA0 /* NormalizationAndLatentPeriodsRemover.swift */,
+				8E601FD22343F37C002A3AA0 /* DynamicProgramming.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -194,8 +217,13 @@
 				8EFD97192325388B0087866B /* AKConverter.swift in Sources */,
 				87097E122341E0B000AEDA0F /* CustomTextField.swift in Sources */,
 				87F2B5272343539B00D751D2 /* AlertHelper.swift in Sources */,
+				8E601FD32343F37C002A3AA0 /* DynamicProgramming.swift in Sources */,
+				8E601FCD2343EE60002A3AA0 /* Sound.swift in Sources */,
 				8EFD9717232534B80087866B /* VideHelper.swift in Sources */,
+				8E601FCA2343EE16002A3AA0 /* AudioManager.swift in Sources */,
 				8EFD96FF23251FE40087866B /* AppDelegate.swift in Sources */,
+				8E601FD12343F0F5002A3AA0 /* NormalizationAndLatentPeriodsRemover.swift in Sources */,
+				8E601FCF2343EFE9002A3AA0 /* OpenHelper.swift in Sources */,
 				8EFD9714232532F10087866B /* VideoCaptureViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
