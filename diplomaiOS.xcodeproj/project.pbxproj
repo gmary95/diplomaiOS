@@ -13,7 +13,6 @@
 		87F2B5272343539B00D751D2 /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F2B5262343539B00D751D2 /* AlertHelper.swift */; };
 		8E601FCA2343EE16002A3AA0 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E601FC92343EE16002A3AA0 /* AudioManager.swift */; };
 		8E601FCD2343EE60002A3AA0 /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E601FCC2343EE60002A3AA0 /* Sound.swift */; };
-		8E601FCF2343EFE9002A3AA0 /* OpenHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E601FCE2343EFE9002A3AA0 /* OpenHelper.swift */; };
 		8E601FD12343F0F5002A3AA0 /* NormalizationAndLatentPeriodsRemover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E601FD02343F0F5002A3AA0 /* NormalizationAndLatentPeriodsRemover.swift */; };
 		8E601FD32343F37C002A3AA0 /* DynamicProgramming.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E601FD22343F37C002A3AA0 /* DynamicProgramming.swift */; };
 		8EFD96FF23251FE40087866B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFD96FE23251FE40087866B /* AppDelegate.swift */; };
@@ -33,7 +32,6 @@
 		87F2B5262343539B00D751D2 /* AlertHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
 		8E601FC92343EE16002A3AA0 /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
 		8E601FCC2343EE60002A3AA0 /* Sound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sound.swift; sourceTree = "<group>"; };
-		8E601FCE2343EFE9002A3AA0 /* OpenHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenHelper.swift; sourceTree = "<group>"; };
 		8E601FD02343F0F5002A3AA0 /* NormalizationAndLatentPeriodsRemover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalizationAndLatentPeriodsRemover.swift; sourceTree = "<group>"; };
 		8E601FD22343F37C002A3AA0 /* DynamicProgramming.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicProgramming.swift; sourceTree = "<group>"; };
 		8EFD96FB23251FE40087866B /* diplomaiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = diplomaiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -133,7 +131,6 @@
 				8EFD97182325388B0087866B /* AKConverter.swift */,
 				87F2B5262343539B00D751D2 /* AlertHelper.swift */,
 				8E601FC92343EE16002A3AA0 /* AudioManager.swift */,
-				8E601FCE2343EFE9002A3AA0 /* OpenHelper.swift */,
 				8E601FD02343F0F5002A3AA0 /* NormalizationAndLatentPeriodsRemover.swift */,
 				8E601FD22343F37C002A3AA0 /* DynamicProgramming.swift */,
 			);
@@ -223,7 +220,6 @@
 				8E601FCA2343EE16002A3AA0 /* AudioManager.swift in Sources */,
 				8EFD96FF23251FE40087866B /* AppDelegate.swift in Sources */,
 				8E601FD12343F0F5002A3AA0 /* NormalizationAndLatentPeriodsRemover.swift in Sources */,
-				8E601FCF2343EFE9002A3AA0 /* OpenHelper.swift in Sources */,
 				8EFD9714232532F10087866B /* VideoCaptureViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

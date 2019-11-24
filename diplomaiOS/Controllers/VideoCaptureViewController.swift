@@ -62,7 +62,19 @@ extension VideoCaptureViewController: UIImagePickerControllerDelegate {
                 FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
             let documentsDirectory: URL = URL(fileURLWithPath: paths[0])
             let dataPath = documentsDirectory.appendingPathComponent(videoFileName)
+            let newURL = documentsDirectory.appendingPathComponent(videoFileName + "1")
             try! videoData?.write(to: dataPath, options: [])
+            
+            var options = AKConverter.Options()
+            // any options left nil will assume the value of the input file
+            options.format = "wav"
+            options.sampleRate == 48000
+            options.bitDepth = 24
+            let converter = AKConverter(inputURL: dataPath, outputURL: newURL, options: options)
+            converter.start(completionHandler: { error in
+                print(error)
+                // check to see if error isn't nil, otherwise you're good
+            })
         }
         // 3
         picker.dismiss(animated: true)
