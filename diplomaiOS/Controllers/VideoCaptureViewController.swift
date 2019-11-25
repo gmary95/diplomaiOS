@@ -14,6 +14,7 @@ class VideoCaptureViewController: UIViewController {
     
     var controller = UIImagePickerController()
     let videoFileName = "/video.mp4"
+    let audioFileName = "/sound.wav"
     let maxVideoTimeInSeconds: TimeInterval = 60 * 3
     
     override func viewDidLoad() {
@@ -62,7 +63,7 @@ extension VideoCaptureViewController: UIImagePickerControllerDelegate {
                 FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
             let documentsDirectory: URL = URL(fileURLWithPath: paths[0])
             let dataPath = documentsDirectory.appendingPathComponent(videoFileName)
-            let newURL = documentsDirectory.appendingPathComponent(videoFileName + "1")
+            let newURL = documentsDirectory.appendingPathComponent(audioFileName)
             try! videoData?.write(to: dataPath, options: [])
             
             var options = AKConverter.Options()
@@ -70,11 +71,15 @@ extension VideoCaptureViewController: UIImagePickerControllerDelegate {
             options.format = "wav"
             options.sampleRate == 48000
             options.bitDepth = 24
-            let converter = AKConverter(inputURL: dataPath, outputURL: newURL, options: options)
+            let converter = AKConverter(inputURL: dataPath, outputURL: dataPath, options: options)
             converter.start(completionHandler: { error in
                 print(error)
                 // check to see if error isn't nil, otherwise you're good
             })
+            
+            let fileMngr = FileManager.default
+            let docs = fileMngr.urls(for: .documentDirectory, in: .userDomainMask)[0].path
+            print(try? fileMngr.contentsOfDirectory(atPath:docs))
         }
         // 3
         picker.dismiss(animated: true)
