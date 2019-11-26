@@ -8,17 +8,34 @@
 
 import UIKit
 import MobileCoreServices
+import AVKit
 
-class VideoCaptureViewController: UIViewController {
+class VideoCaptureViewController: UIViewController, AVAudioPlayerDelegate {
     @IBOutlet weak var startButton: UIButton?
     
     var controller = UIImagePickerController()
     let videoFileName = "/video.mp4"
-    let audioFileName = "/sound.wav"
-    let maxVideoTimeInSeconds: TimeInterval = 60 * 3
+    let audioFileName = "/sample_audio.m4a"
+    let maxVideoTimeInSeconds: TimeInterval = 3
+    
+    var urlVideo: URL? = nil
+    
+    var player : AVAudioPlayer! = nil
     
     override func viewDidLoad() {
         
+    }
+    
+    @IBAction func saveProfile(_ sender: Any) {
+        let fileMngr = FileManager.default
+        let docs = fileMngr.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        print(try? fileMngr.contentsOfDirectory(atPath:docs.path))
+        
+        let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        let url = documentsURL.appendingPathComponent(audioFileName)
+           player = try! AVAudioPlayer(contentsOf:  url)
+            player.prepareToPlay()
+            player.play()
     }
     
     @IBAction func startRecordVideo(_ sender: UIButton) {
@@ -50,39 +67,71 @@ class VideoCaptureViewController: UIViewController {
 
 extension VideoCaptureViewController: UIImagePickerControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        // 1
-        if let selectedVideo:URL = (info[UIImagePickerController.InfoKey.mediaURL] as? URL) {
-            // Save video to the main photo album
-            let selectorToCall = #selector(VideoCaptureViewController.videoSaved(_:didFinishSavingWithError:context:))
+        var videoAsset: AVAsset!
+        let newAudioAsset = AVMutableComposition()
+        let dstCompositionTrack = newAudioAsset.addMutableTrack(withMediaType: .audio, preferredTrackID: kCMPersistentTrackID_Invalid)
+        // 1 - Get media type
+        let mediaType = info[.mediaType] as? String
+        
+        // 2 - Dismiss image picker
+        dismiss(animated: true)
+        
+        // 3 - Handle video selection
+        if CFStringCompare(mediaType as CFString?, kUTTypeMovie, []) == .compareEqualTo {
+            if let object = info[.mediaURL] as? URL {
+                videoAsset = AVAsset(url: object)
+            }
+            //  NSLog(@"track = %@",[videoAsset tracksWithMediaType:AVMediaTypeAudio]);
             
-            // 2
-            UISaveVideoAtPathToSavedPhotosAlbum(selectedVideo.relativePath, self, selectorToCall, nil)
-            // Save the video to the app directory
-            let videoData = try? Data(contentsOf: selectedVideo)
-            let paths = NSSearchPathForDirectoriesInDomains(
-                FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
-            let documentsDirectory: URL = URL(fileURLWithPath: paths[0])
-            let dataPath = documentsDirectory.appendingPathComponent(videoFileName)
-            let newURL = documentsDirectory.appendingPathComponent(audioFileName)
-            try! videoData?.write(to: dataPath, options: [])
+            let trackArray = videoAsset.tracks(withMediaType: .audio)
+            if trackArray.count == 0 {
+                print("Track returns empty array for mediatype AVMediaTypeAudio")
+                return
+            }
             
-            var options = AKConverter.Options()
-            // any options left nil will assume the value of the input file
-            options.format = "wav"
-            options.sampleRate == 48000
-            options.bitDepth = 24
-            let converter = AKConverter(inputURL: dataPath, outputURL: dataPath, options: options)
-            converter.start(completionHandler: { error in
-                print(error)
-                // check to see if error isn't nil, otherwise you're good
+            let srcAssetTrack = trackArray[0]
+            
+            //Extract time range
+            let timeRange = srcAssetTrack.timeRange
+            var err: Error? = nil
+            do {
+                if try dstCompositionTrack?.insertTimeRange(timeRange, of: srcAssetTrack, at: .zero) == nil {
+                    print("Failed to insert audio from the video to mutable avcomposition track")
+                    return
+                }
+            } catch let err {
+            }
+            //Export the avcompostion track to destination path
+            let documentsDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+            let dstPath = documentsDirectory + (audioFileName)
+            let dstURL = URL(fileURLWithPath: dstPath)
+            
+            
+            //Remove if any file already exists
+            do {
+                try FileManager.default.removeItem(at: dstURL)
+            } catch {
+            }
+            
+            let exportSession = AVAssetExportSession(asset: newAudioAsset, presetName: AVAssetExportPresetPassthrough)
+            if let supported = exportSession?.supportedFileTypes {
+                print("support file types= \(supported)")
+            }
+            exportSession?.outputFileType = .m4a
+            exportSession?.outputURL = dstURL
+            
+            exportSession?.exportAsynchronously(completionHandler: {
+                let status = exportSession?.status
+                
+                if .completed != status {
+                    if let description = exportSession?.error {
+                        print("Export status not yet completed. Error: \(description)")
+                    }
+                }
+                
+                
             })
-            
-            let fileMngr = FileManager.default
-            let docs = fileMngr.urls(for: .documentDirectory, in: .userDomainMask)[0].path
-            print(try? fileMngr.contentsOfDirectory(atPath:docs))
         }
-        // 3
-        picker.dismiss(animated: true)
     }
 }
 
