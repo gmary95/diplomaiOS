@@ -22,7 +22,6 @@
 		8EFD970923251FE50087866B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EFD970723251FE50087866B /* LaunchScreen.storyboard */; };
 		8EFD9714232532F10087866B /* VideoCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFD9713232532F10087866B /* VideoCaptureViewController.swift */; };
 		8EFD9717232534B80087866B /* VideHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFD9716232534B80087866B /* VideHelper.swift */; };
-		8EFD97192325388B0087866B /* AKConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFD97182325388B0087866B /* AKConverter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,7 +42,6 @@
 		8EFD970A23251FE50087866B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8EFD9713232532F10087866B /* VideoCaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCaptureViewController.swift; sourceTree = "<group>"; };
 		8EFD9716232534B80087866B /* VideHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideHelper.swift; sourceTree = "<group>"; };
-		8EFD97182325388B0087866B /* AKConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKConverter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,7 +126,6 @@
 			isa = PBXGroup;
 			children = (
 				8EFD9716232534B80087866B /* VideHelper.swift */,
-				8EFD97182325388B0087866B /* AKConverter.swift */,
 				87F2B5262343539B00D751D2 /* AlertHelper.swift */,
 				8E601FC92343EE16002A3AA0 /* AudioManager.swift */,
 				8E601FD02343F0F5002A3AA0 /* NormalizationAndLatentPeriodsRemover.swift */,
@@ -211,7 +208,6 @@
 			files = (
 				87F2B5252343480500D751D2 /* ResultAuthorizationViewController.swift in Sources */,
 				8EFD970123251FE40087866B /* RegistrationViewController.swift in Sources */,
-				8EFD97192325388B0087866B /* AKConverter.swift in Sources */,
 				87097E122341E0B000AEDA0F /* CustomTextField.swift in Sources */,
 				87F2B5272343539B00D751D2 /* AlertHelper.swift in Sources */,
 				8E601FD32343F37C002A3AA0 /* DynamicProgramming.swift in Sources */,
