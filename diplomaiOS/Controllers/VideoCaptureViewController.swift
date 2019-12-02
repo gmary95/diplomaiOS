@@ -16,11 +16,12 @@ class VideoCaptureViewController: UIViewController, AVAudioPlayerDelegate {
     var controller = UIImagePickerController()
     let videoFileName = "/video.mp4"
     let audioFileName = "/sample_audio.m4a"
+    let audioWAVFileName = "/sample_audio.wav"
     let maxVideoTimeInSeconds: TimeInterval = 3
     
     var urlVideo: URL? = nil
     
-    var player : AVAudioPlayer! = nil
+    let audioManager = AudioManager.shared
     
     override func viewDidLoad() {
         
@@ -33,9 +34,21 @@ class VideoCaptureViewController: UIViewController, AVAudioPlayerDelegate {
         
         let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
         let url = documentsURL.appendingPathComponent(audioFileName)
-           player = try! AVAudioPlayer(contentsOf:  url)
-            player.prepareToPlay()
-            player.play()
+        let urlWAV = documentsURL.appendingPathComponent(audioWAVFileName)
+        
+        audioManager.convertAudio(url, outputURL: urlWAV)
+        
+        guard let fileUrl = Bundle.main.url(forResource: "sample_audio", withExtension: "wav") else {
+            return
+        }
+        
+        guard let file = bytesFromFile(filePath: fileUrl.path) else {
+            return
+        }
+        
+        let intArray = audioManager.convertAudioBytesToAmplitude(data: file)
+        
+        print("success")
     }
     
     @IBAction func startRecordVideo(_ sender: UIButton) {
@@ -132,6 +145,16 @@ extension VideoCaptureViewController: UIImagePickerControllerDelegate {
                 
             })
         }
+    }
+    
+    func bytesFromFile(filePath: String) -> [UInt8]? {
+
+        guard let data = NSData(contentsOfFile: filePath) else { return nil }
+
+        var buffer = [UInt8](repeating: 0, count: data.length)
+        data.getBytes(&buffer, length: data.length)
+
+        return buffer
     }
 }
 

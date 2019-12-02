@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		87097E122341E0B000AEDA0F /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87097E112341E0B000AEDA0F /* CustomTextField.swift */; };
+		87EFEE8A238FC43B00B1D542 /* sample_audio.wav in Resources */ = {isa = PBXBuildFile; fileRef = 87EFEE89238FC43B00B1D542 /* sample_audio.wav */; };
 		87F2B5212343453600D751D2 /* Authorization.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87F2B5202343453600D751D2 /* Authorization.storyboard */; };
 		87F2B5252343480500D751D2 /* ResultAuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F2B5242343480500D751D2 /* ResultAuthorizationViewController.swift */; };
 		87F2B5272343539B00D751D2 /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F2B5262343539B00D751D2 /* AlertHelper.swift */; };
@@ -27,6 +28,7 @@
 
 /* Begin PBXFileReference section */
 		87097E112341E0B000AEDA0F /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		87EFEE89238FC43B00B1D542 /* sample_audio.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sample_audio.wav; sourceTree = "<group>"; };
 		87F2B5202343453600D751D2 /* Authorization.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authorization.storyboard; sourceTree = "<group>"; };
 		87F2B5242343480500D751D2 /* ResultAuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultAuthorizationViewController.swift; sourceTree = "<group>"; };
 		87F2B5262343539B00D751D2 /* AlertHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				8EFD97102325329D0087866B /* UserInterface */,
 				8EFD96FE23251FE40087866B /* AppDelegate.swift */,
 				8EFD970523251FE50087866B /* Assets.xcassets */,
+				87EFEE89238FC43B00B1D542 /* sample_audio.wav */,
 				8EFD970A23251FE50087866B /* Info.plist */,
 				87097E112341E0B000AEDA0F /* CustomTextField.swift */,
 			);
@@ -195,6 +198,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87EFEE8A238FC43B00B1D542 /* sample_audio.wav in Resources */,
 				8EFD970923251FE50087866B /* LaunchScreen.storyboard in Resources */,
 				8EFD970623251FE50087866B /* Assets.xcassets in Resources */,
 				87F2B5212343453600D751D2 /* Authorization.storyboard in Resources */,
