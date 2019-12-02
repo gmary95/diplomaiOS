@@ -28,25 +28,17 @@ class VideoCaptureViewController: UIViewController, AVAudioPlayerDelegate {
     }
     
     @IBAction func saveProfile(_ sender: Any) {
-        let fileMngr = FileManager.default
-        let docs = fileMngr.urls(for: .documentDirectory, in: .userDomainMask)[0]
-        print(try? fileMngr.contentsOfDirectory(atPath:docs.path))
-        
-        let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-        let url = documentsURL.appendingPathComponent(audioFileName)
-        let urlWAV = documentsURL.appendingPathComponent(audioWAVFileName)
+        let url = PathHelper.createPathInDocument(fileName: audioFileName)
+        let urlWAV = PathHelper.createPathInDocument(fileName: audioWAVFileName)
         
         audioManager.convertAudio(url, outputURL: urlWAV)
         
-        guard let fileUrl = Bundle.main.url(forResource: "sample_audio", withExtension: "wav") else {
+        guard let file = audioManager.bytesFromFile(filePath: urlWAV.path) else {
             return
         }
-        
-        guard let file = bytesFromFile(filePath: fileUrl.path) else {
-            return
-        }
-        
+
         let intArray = audioManager.convertAudioBytesToAmplitude(data: file)
+        let originalSound = Sound(header: Header(length: audioManager.sampleRate), arr: intArray)
         
         print("success")
     }
@@ -147,15 +139,7 @@ extension VideoCaptureViewController: UIImagePickerControllerDelegate {
         }
     }
     
-    func bytesFromFile(filePath: String) -> [UInt8]? {
-
-        guard let data = NSData(contentsOfFile: filePath) else { return nil }
-
-        var buffer = [UInt8](repeating: 0, count: data.length)
-        data.getBytes(&buffer, length: data.length)
-
-        return buffer
-    }
+    
 }
 
 extension VideoCaptureViewController: UINavigationControllerDelegate {

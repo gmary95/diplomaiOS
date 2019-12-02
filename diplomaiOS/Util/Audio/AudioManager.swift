@@ -17,11 +17,21 @@ class AudioManager {
         return instance
     }()
     
+    func bytesFromFile(filePath: String) -> [UInt8]? {
+
+        guard let data = NSData(contentsOfFile: filePath) else { return nil }
+
+        var buffer = [UInt8](repeating: 0, count: data.length)
+        data.getBytes(&buffer, length: data.length)
+
+        return buffer
+    }
+    
     func convertAudioBytesToAmplitude(data: [UInt8]) -> [Int16] {
         var arrayOfInt = [Int16]()
         for i in 0 ..< (data.count - sampleRate) / 2 {
             arrayOfInt.append(
-                (Int16(data[(sampleRate + i * 2)]) << 8) | (Int16(data[(sampleRate + i * 2) + 1]) & 0xff)
+                (Int16(data[(sampleRate + i * 2) + 1]) << 8) | (Int16(data[(sampleRate + i * 2)]) & 0xff)
             )
         }
         return arrayOfInt
