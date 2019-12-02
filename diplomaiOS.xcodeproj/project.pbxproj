@@ -12,6 +12,7 @@
 		87F2B5212343453600D751D2 /* Authorization.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87F2B5202343453600D751D2 /* Authorization.storyboard */; };
 		87F2B5252343480500D751D2 /* ResultAuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F2B5242343480500D751D2 /* ResultAuthorizationViewController.swift */; };
 		87F2B5272343539B00D751D2 /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F2B5262343539B00D751D2 /* AlertHelper.swift */; };
+		8E35E47C23942F1C004690ED /* MelCharacteristicsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E35E47B23942F1C004690ED /* MelCharacteristicsManager.swift */; };
 		8E601FCA2343EE16002A3AA0 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E601FC92343EE16002A3AA0 /* AudioManager.swift */; };
 		8E601FCD2343EE60002A3AA0 /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E601FCC2343EE60002A3AA0 /* Sound.swift */; };
 		8E601FD12343F0F5002A3AA0 /* NormalizationAndLatentPeriodsRemover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E601FD02343F0F5002A3AA0 /* NormalizationAndLatentPeriodsRemover.swift */; };
@@ -23,7 +24,6 @@
 		8EFD970923251FE50087866B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EFD970723251FE50087866B /* LaunchScreen.storyboard */; };
 		8EFD9714232532F10087866B /* VideoCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFD9713232532F10087866B /* VideoCaptureViewController.swift */; };
 		8EFD9717232534B80087866B /* VideHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFD9716232534B80087866B /* VideHelper.swift */; };
-		8EFD97192325388B0087866B /* AKConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFD97182325388B0087866B /* AKConverter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +32,7 @@
 		87F2B5202343453600D751D2 /* Authorization.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authorization.storyboard; sourceTree = "<group>"; };
 		87F2B5242343480500D751D2 /* ResultAuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultAuthorizationViewController.swift; sourceTree = "<group>"; };
 		87F2B5262343539B00D751D2 /* AlertHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
+		8E35E47B23942F1C004690ED /* MelCharacteristicsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelCharacteristicsManager.swift; sourceTree = "<group>"; };
 		8E601FC92343EE16002A3AA0 /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
 		8E601FCC2343EE60002A3AA0 /* Sound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sound.swift; sourceTree = "<group>"; };
 		8E601FD02343F0F5002A3AA0 /* NormalizationAndLatentPeriodsRemover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalizationAndLatentPeriodsRemover.swift; sourceTree = "<group>"; };
@@ -45,7 +46,6 @@
 		8EFD970A23251FE50087866B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8EFD9713232532F10087866B /* VideoCaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCaptureViewController.swift; sourceTree = "<group>"; };
 		8EFD9716232534B80087866B /* VideHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideHelper.swift; sourceTree = "<group>"; };
-		8EFD97182325388B0087866B /* AKConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKConverter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,11 +131,11 @@
 			isa = PBXGroup;
 			children = (
 				8EFD9716232534B80087866B /* VideHelper.swift */,
-				8EFD97182325388B0087866B /* AKConverter.swift */,
 				87F2B5262343539B00D751D2 /* AlertHelper.swift */,
 				8E601FC92343EE16002A3AA0 /* AudioManager.swift */,
 				8E601FD02343F0F5002A3AA0 /* NormalizationAndLatentPeriodsRemover.swift */,
 				8E601FD22343F37C002A3AA0 /* DynamicProgramming.swift */,
+				8E35E47B23942F1C004690ED /* MelCharacteristicsManager.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -215,12 +215,12 @@
 			files = (
 				87F2B5252343480500D751D2 /* ResultAuthorizationViewController.swift in Sources */,
 				8EFD970123251FE40087866B /* RegistrationViewController.swift in Sources */,
-				8EFD97192325388B0087866B /* AKConverter.swift in Sources */,
 				87097E122341E0B000AEDA0F /* CustomTextField.swift in Sources */,
 				87F2B5272343539B00D751D2 /* AlertHelper.swift in Sources */,
 				8E601FD32343F37C002A3AA0 /* DynamicProgramming.swift in Sources */,
 				8E601FCD2343EE60002A3AA0 /* Sound.swift in Sources */,
 				8EFD9717232534B80087866B /* VideHelper.swift in Sources */,
+				8E35E47C23942F1C004690ED /* MelCharacteristicsManager.swift in Sources */,
 				8E601FCA2343EE16002A3AA0 /* AudioManager.swift in Sources */,
 				8EFD96FF23251FE40087866B /* AppDelegate.swift in Sources */,
 				8E601FD12343F0F5002A3AA0 /* NormalizationAndLatentPeriodsRemover.swift in Sources */,
