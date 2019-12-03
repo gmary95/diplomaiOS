@@ -10,7 +10,7 @@ import Foundation
 
 public struct Header
 {
-    public var length: Int
+    public var sampleRate: Int
 }
 
 class Sound

@@ -64,7 +64,7 @@ struct NormalizationAndLatentPeriodsRemover {
     static public func calcVariance(arr: [Int16]) -> Double {
         var varience = 0.0
         for i in 0 ..< arr.count {
-            varience += pow(Double(arr[i]), 2) //arr.count;
+            varience += pow(Double(arr[i]), 2)
         }
         varience /= Double(arr.count)
         return varience

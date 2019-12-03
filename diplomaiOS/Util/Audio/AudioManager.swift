@@ -10,7 +10,8 @@ import Foundation
 import AVKit
 
 class AudioManager {
-    let sampleRate = 44
+    let headerSize = 44
+    var sampleRate: UInt32 = 44100
     
     static var shared: AudioManager = {
         let instance = AudioManager()
@@ -29,9 +30,13 @@ class AudioManager {
     
     func convertAudioBytesToAmplitude(data: [UInt8]) -> [Int16] {
         var arrayOfInt = [Int16]()
-        for i in 0 ..< (data.count - sampleRate) / 2 {
+        
+        let value = UInt32(bigEndian: Data(data[24...27].reversed()).withUnsafeBytes { $0.pointee })
+        sampleRate = value
+        
+        for i in 0 ..< (data.count - headerSize) / 2 {
             arrayOfInt.append(
-                (Int16(data[(sampleRate + i * 2) + 1]) << 8) | (Int16(data[(sampleRate + i * 2)]) & 0xff)
+                (Int16(data[(headerSize + i * 2) + 1]) << 8) | (Int16(data[(headerSize + i * 2)]) & 0xff)
             )
         }
         return arrayOfInt

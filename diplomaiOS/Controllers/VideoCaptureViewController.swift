@@ -38,9 +38,16 @@ class VideoCaptureViewController: UIViewController, AVAudioPlayerDelegate {
         }
 
         let intArray = audioManager.convertAudioBytesToAmplitude(data: file)
-        let originalSound = Sound(header: Header(length: audioManager.sampleRate), arr: intArray)
+        let originalSound = Sound(header: Header(sampleRate: Int(audioManager.sampleRate)), arr: intArray)
         
-        print("success")
+        let soundWithoutLatentPeriod = NormalizationAndLatentPeriodsRemover.removeLatentPeriods(sound: originalSound)
+        let soundNorm = NormalizationAndLatentPeriodsRemover.normalization(sound: soundWithoutLatentPeriod)
+        
+        let start = 0
+        let finish = 200
+        let mfcc = Frame(sourceNormalized: soundNorm, start: start, finish: finish).initMFCC(source: soundNorm, start: start, finish: finish, freq: Int(audioManager.sampleRate))
+        
+        print(mfcc)
     }
     
     @IBAction func startRecordVideo(_ sender: UIButton) {
