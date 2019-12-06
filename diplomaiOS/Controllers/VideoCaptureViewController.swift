@@ -44,7 +44,7 @@ class VideoCaptureViewController: UIViewController, AVAudioPlayerDelegate {
         let soundNorm = NormalizationAndLatentPeriodsRemover.normalization(sound: soundWithoutLatentPeriod)
         
         let start = 0
-        let finish = 200
+        let finish = soundNorm.count - 1
         let mfcc = Frame(sourceNormalized: soundNorm, start: start, finish: finish).initMFCC(source: soundNorm, start: start, finish: finish, freq: Int(audioManager.sampleRate))
         
         print(mfcc)

@@ -51,9 +51,11 @@ struct NormalizationAndLatentPeriodsRemover {
     
     // Need sound without latent period
     static public func normalization(sound: Sound) -> [Double] {
-        let varience = calcVariance(arr: sound.arr)
+        let soundArr: [Int16] = Array(sound.arr[3 ..< sound.arr.count])
+        let newSound = removeLatentPeriods(sound: Sound(header: sound.header, arr: soundArr))
+        let varience = calcVariance(arr: newSound.arr)
         var normalizationArr = [Double]()
-        for item in sound.arr
+        for item in newSound.arr
         {
             normalizationArr.append(Double(item) / sqrt(varience))
         }

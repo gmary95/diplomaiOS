@@ -9,9 +9,9 @@
 import Foundation
 
 class Frame {
-    let MFCC_SIZE = 12
+    let MFCC_SIZE = 10
     let MFCC_FREQ_MIN = 300
-    let MFCC_FREQ_MAX = 4000
+    let MFCC_FREQ_MAX = 8000
     
     var sourceNormalized: [Double]
     var start: Int

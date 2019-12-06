@@ -16,7 +16,7 @@ class MelCharacteristicsManager {
     }()
     
     func transform(source: [Double], start: Int, finish: Int, mfccSize: Int, frequency: Int, freqMin: UInt32, freqMax: UInt32) -> [Double] {
-        let sampleLength = finish - start + 1
+        let sampleLength = finish - start //+1
         
         let fourierRaw = fourierTransformation(source: source, length: sampleLength, start: start)
         let melFilters = getMelFilters(freqMin: freqMin, freqMax: freqMax, mfccSize: mfccSize, frequency: UInt32(frequency), filterLength: UInt32(sampleLength))
@@ -33,9 +33,9 @@ extension MelCharacteristicsManager {
         fb[0] = convertToMel(f: Double(freqMin))
         fb[mfccSize + 1] = convertToMel(f: Double(freqMax))
         
-        for m in 1 ..< mfccSize + 1 {
+        for m in 1 ... mfccSize {
             let tmp: Double = (fb[mfccSize + 1] - fb[0])
-            fb[m] = fb[0] + Double(m) * tmp / Double(mfccSize + 1)
+            fb[m] = fb[0] + Double(m) * (tmp / Double(mfccSize + 1))
         }
         
         for m in 0 ..< mfccSize + 2 {
