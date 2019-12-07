@@ -18,7 +18,8 @@ class ResultAuthorizationViewController: UIViewController {
         super.viewDidLoad()
         
         if !isSuccess {
-            imageView.image = UIImage(named: "ic_failed")
+            imageView.image = VideoConverter.imageFromVideo(url: PathHelper.createPathInDocument(fileName: "/video.mp4"), at: 2)
+//            imageView.image = UIImage(named: "ic_failed")
             resultMessageLabel.text = "Your authorization is failed!"
             resultMessageLabel.textColor = .red
         }

@@ -17,6 +17,13 @@
 		87F2B5212343453600D751D2 /* Authorization.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87F2B5202343453600D751D2 /* Authorization.storyboard */; };
 		87F2B5252343480500D751D2 /* ResultAuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F2B5242343480500D751D2 /* ResultAuthorizationViewController.swift */; };
 		87F2B5272343539B00D751D2 /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F2B5262343539B00D751D2 /* AlertHelper.swift */; };
+		8E0DD350239C262000D3F2D9 /* VideoConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0DD34F239C262000D3F2D9 /* VideoConverter.swift */; };
+		8E30B55B239C3A7500D55411 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E30B55A239C3A7500D55411 /* AssetsLibrary.framework */; };
+		8E30B55D239C3A8400D55411 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E30B55C239C3A8400D55411 /* CoreGraphics.framework */; };
+		8E30B55F239C3A8C00D55411 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E30B55E239C3A8B00D55411 /* CoreMedia.framework */; };
+		8E30B561239C3A9700D55411 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E30B560239C3A9700D55411 /* CoreFoundation.framework */; };
+		8E30B563239C3A9E00D55411 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E30B562239C3A9E00D55411 /* Accelerate.framework */; };
+		8E30B565239C3B7200D55411 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E30B564239C3B7100D55411 /* opencv2.framework */; };
 		8E35E47C23942F1C004690ED /* MelCharacteristicsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E35E47B23942F1C004690ED /* MelCharacteristicsManager.swift */; };
 		8E601FCA2343EE16002A3AA0 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E601FC92343EE16002A3AA0 /* AudioManager.swift */; };
 		8E601FCD2343EE60002A3AA0 /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E601FCC2343EE60002A3AA0 /* Sound.swift */; };
@@ -42,6 +49,14 @@
 		87F2B5202343453600D751D2 /* Authorization.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authorization.storyboard; sourceTree = "<group>"; };
 		87F2B5242343480500D751D2 /* ResultAuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultAuthorizationViewController.swift; sourceTree = "<group>"; };
 		87F2B5262343539B00D751D2 /* AlertHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
+		8E0DD34F239C262000D3F2D9 /* VideoConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoConverter.swift; sourceTree = "<group>"; };
+		8E30B558239C39DA00D55411 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = ../../../Downloads/opencv2.framework; sourceTree = "<group>"; };
+		8E30B55A239C3A7500D55411 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		8E30B55C239C3A8400D55411 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		8E30B55E239C3A8B00D55411 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		8E30B560239C3A9700D55411 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		8E30B562239C3A9E00D55411 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		8E30B564239C3B7100D55411 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
 		8E35E47B23942F1C004690ED /* MelCharacteristicsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelCharacteristicsManager.swift; sourceTree = "<group>"; };
 		8E601FC92343EE16002A3AA0 /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
 		8E601FCC2343EE60002A3AA0 /* Sound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sound.swift; sourceTree = "<group>"; };
@@ -63,6 +78,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E30B565239C3B7200D55411 /* opencv2.framework in Frameworks */,
+				8E30B563239C3A9E00D55411 /* Accelerate.framework in Frameworks */,
+				8E30B561239C3A9700D55411 /* CoreFoundation.framework in Frameworks */,
+				8E30B55F239C3A8C00D55411 /* CoreMedia.framework in Frameworks */,
+				8E30B55D239C3A8400D55411 /* CoreGraphics.framework in Frameworks */,
+				8E30B55B239C3A7500D55411 /* AssetsLibrary.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +110,28 @@
 			path = Library;
 			sourceTree = "<group>";
 		};
+		8E0DD34E239C260100D3F2D9 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				8E0DD34F239C262000D3F2D9 /* VideoConverter.swift */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
+		8E30B557239C39DA00D55411 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8E30B564239C3B7100D55411 /* opencv2.framework */,
+				8E30B562239C3A9E00D55411 /* Accelerate.framework */,
+				8E30B560239C3A9700D55411 /* CoreFoundation.framework */,
+				8E30B55E239C3A8B00D55411 /* CoreMedia.framework */,
+				8E30B55C239C3A8400D55411 /* CoreGraphics.framework */,
+				8E30B55A239C3A7500D55411 /* AssetsLibrary.framework */,
+				8E30B558239C39DA00D55411 /* opencv2.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8E601FCB2343EE4A002A3AA0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +146,7 @@
 			children = (
 				8EFD96FD23251FE40087866B /* diplomaiOS */,
 				8EFD96FC23251FE40087866B /* Products */,
+				8E30B557239C39DA00D55411 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -162,6 +206,7 @@
 		8EFD9715232534AC0087866B /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				8E0DD34E239C260100D3F2D9 /* Image */,
 				876A76AD2394DA7D00206480 /* Audio */,
 				8EFD9716232534B80087866B /* VideHelper.swift */,
 				87F2B5262343539B00D751D2 /* AlertHelper.swift */,
@@ -247,6 +292,7 @@
 				87F2B5252343480500D751D2 /* ResultAuthorizationViewController.swift in Sources */,
 				876A76AC2394D6F700206480 /* PathHelper.swift in Sources */,
 				8EFD970123251FE40087866B /* RegistrationViewController.swift in Sources */,
+				8E0DD350239C262000D3F2D9 /* VideoConverter.swift in Sources */,
 				876A76B22394E8DD00206480 /* GaussianInt.swift in Sources */,
 				87097E122341E0B000AEDA0F /* CustomTextField.swift in Sources */,
 				87F2B5272343539B00D751D2 /* AlertHelper.swift in Sources */,
@@ -408,10 +454,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5B69Y52AXL;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = diplomaiOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
-					"@executable_path/Frameworks",
+					"$(PROJECT_DIR)/",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.gmary.diplomaiOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -426,10 +476,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5B69Y52AXL;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = diplomaiOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
-					"@executable_path/Frameworks",
+					"$(PROJECT_DIR)/",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.gmary.diplomaiOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
