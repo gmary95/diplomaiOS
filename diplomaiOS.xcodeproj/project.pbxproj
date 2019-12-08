@@ -29,6 +29,7 @@
 		8E601FCD2343EE60002A3AA0 /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E601FCC2343EE60002A3AA0 /* Sound.swift */; };
 		8E601FD12343F0F5002A3AA0 /* NormalizationAndLatentPeriodsRemover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E601FD02343F0F5002A3AA0 /* NormalizationAndLatentPeriodsRemover.swift */; };
 		8E601FD32343F37C002A3AA0 /* DynamicProgramming.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E601FD22343F37C002A3AA0 /* DynamicProgramming.swift */; };
+		8E800165239D09B7008785DC /* OpenCVWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8E800164239D09B7008785DC /* OpenCVWrapper.mm */; };
 		8EFD96FF23251FE40087866B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFD96FE23251FE40087866B /* AppDelegate.swift */; };
 		8EFD970123251FE40087866B /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFD970023251FE40087866B /* RegistrationViewController.swift */; };
 		8EFD970423251FE40087866B /* Registration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EFD970223251FE40087866B /* Registration.storyboard */; };
@@ -62,6 +63,10 @@
 		8E601FCC2343EE60002A3AA0 /* Sound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sound.swift; sourceTree = "<group>"; };
 		8E601FD02343F0F5002A3AA0 /* NormalizationAndLatentPeriodsRemover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalizationAndLatentPeriodsRemover.swift; sourceTree = "<group>"; };
 		8E601FD22343F37C002A3AA0 /* DynamicProgramming.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicProgramming.swift; sourceTree = "<group>"; };
+		8E800162239D09B6008785DC /* diplomaiOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "diplomaiOS-Bridging-Header.h"; sourceTree = "<group>"; };
+		8E800163239D09B7008785DC /* OpenCVWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenCVWrapper.h; sourceTree = "<group>"; };
+		8E800164239D09B7008785DC /* OpenCVWrapper.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenCVWrapper.mm; sourceTree = "<group>"; };
+		8E800166239D0A21008785DC /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		8EFD96FB23251FE40087866B /* diplomaiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = diplomaiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EFD96FE23251FE40087866B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8EFD970023251FE40087866B /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
@@ -141,12 +146,24 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		8E800167239D0B59008785DC /* OpenCV */ = {
+			isa = PBXGroup;
+			children = (
+				8E800164239D09B7008785DC /* OpenCVWrapper.mm */,
+				8E800163239D09B7008785DC /* OpenCVWrapper.h */,
+			);
+			path = OpenCV;
+			sourceTree = "<group>";
+		};
 		8EFD96F223251FE40087866B = {
 			isa = PBXGroup;
 			children = (
+				8E800167239D0B59008785DC /* OpenCV */,
 				8EFD96FD23251FE40087866B /* diplomaiOS */,
 				8EFD96FC23251FE40087866B /* Products */,
 				8E30B557239C39DA00D55411 /* Frameworks */,
+				8E800162239D09B6008785DC /* diplomaiOS-Bridging-Header.h */,
+				8E800166239D0A21008785DC /* PrefixHeader.pch */,
 			);
 			sourceTree = "<group>";
 		};
@@ -248,6 +265,7 @@
 				TargetAttributes = {
 					8EFD96FA23251FE40087866B = {
 						CreatedOnToolsVersion = 10.3;
+						LastSwiftMigration = 1120;
 					};
 				};
 			};
@@ -293,6 +311,7 @@
 				876A76AC2394D6F700206480 /* PathHelper.swift in Sources */,
 				8EFD970123251FE40087866B /* RegistrationViewController.swift in Sources */,
 				8E0DD350239C262000D3F2D9 /* VideoConverter.swift in Sources */,
+				8E800165239D09B7008785DC /* OpenCVWrapper.mm in Sources */,
 				876A76B22394E8DD00206480 /* GaussianInt.swift in Sources */,
 				87097E122341E0B000AEDA0F /* CustomTextField.swift in Sources */,
 				87F2B5272343539B00D751D2 /* AlertHelper.swift in Sources */,
@@ -452,12 +471,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5B69Y52AXL;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
+				GCC_PREFIX_HEADER = "$(SRCROOT)/PrefixHeader.pch";
 				INFOPLIST_FILE = diplomaiOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -465,6 +486,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.gmary.diplomaiOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "diplomaiOS-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -474,12 +497,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5B69Y52AXL;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
+				GCC_PREFIX_HEADER = "$(SRCROOT)/PrefixHeader.pch";
 				INFOPLIST_FILE = diplomaiOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -487,6 +512,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.gmary.diplomaiOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "diplomaiOS-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

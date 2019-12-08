@@ -85,6 +85,12 @@ extension VideoCaptureViewController: UIImagePickerControllerDelegate {
         // 1 - Get media type
         let mediaType = info[.mediaType] as? String
         
+        let videoURL = info[UIImagePickerController.InfoKey.mediaURL] as! NSURL
+        let videoData = NSData(contentsOf: videoURL as URL)
+        let dataPath = PathHelper.createPathInDocument(fileName: videoFileName)
+
+        videoData?.write(to: dataPath, atomically: false)
+        
         // 2 - Dismiss image picker
         dismiss(animated: true)
         
