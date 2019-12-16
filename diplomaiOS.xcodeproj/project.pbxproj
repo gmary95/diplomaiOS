@@ -18,6 +18,7 @@
 		87F2B5212343453600D751D2 /* Authorization.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87F2B5202343453600D751D2 /* Authorization.storyboard */; };
 		87F2B5252343480500D751D2 /* ResultAuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F2B5242343480500D751D2 /* ResultAuthorizationViewController.swift */; };
 		87F2B5272343539B00D751D2 /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F2B5262343539B00D751D2 /* AlertHelper.swift */; };
+		8E042B8923A67078009952C1 /* LocalBinaryPatternsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E042B8823A67078009952C1 /* LocalBinaryPatternsManager.swift */; };
 		8E0DD350239C262000D3F2D9 /* VideoConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0DD34F239C262000D3F2D9 /* VideoConverter.swift */; };
 		8E30B55B239C3A7500D55411 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E30B55A239C3A7500D55411 /* AssetsLibrary.framework */; };
 		8E30B55D239C3A8400D55411 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E30B55C239C3A8400D55411 /* CoreGraphics.framework */; };
@@ -51,6 +52,7 @@
 		87F2B5202343453600D751D2 /* Authorization.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authorization.storyboard; sourceTree = "<group>"; };
 		87F2B5242343480500D751D2 /* ResultAuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultAuthorizationViewController.swift; sourceTree = "<group>"; };
 		87F2B5262343539B00D751D2 /* AlertHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
+		8E042B8823A67078009952C1 /* LocalBinaryPatternsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalBinaryPatternsManager.swift; sourceTree = "<group>"; };
 		8E0DD34F239C262000D3F2D9 /* VideoConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoConverter.swift; sourceTree = "<group>"; };
 		8E30B55A239C3A7500D55411 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		8E30B55C239C3A8400D55411 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -118,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				8E0DD34F239C262000D3F2D9 /* VideoConverter.swift */,
+				8E042B8823A67078009952C1 /* LocalBinaryPatternsManager.swift */,
 			);
 			path = Image;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 				8EFD9717232534B80087866B /* VideHelper.swift in Sources */,
 				876A76B62394F04500206480 /* Frame.swift in Sources */,
 				8E35E47C23942F1C004690ED /* MelCharacteristicsManager.swift in Sources */,
+				8E042B8923A67078009952C1 /* LocalBinaryPatternsManager.swift in Sources */,
 				876A76B42394EBED00206480 /* FloatingPointMath.swift in Sources */,
 				8E601FCA2343EE16002A3AA0 /* AudioManager.swift in Sources */,
 				876A76B12394E8DD00206480 /* Complex.swift in Sources */,
