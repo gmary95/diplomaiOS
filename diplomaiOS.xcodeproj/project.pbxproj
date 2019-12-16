@@ -15,6 +15,8 @@
 		876A76B22394E8DD00206480 /* GaussianInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876A76B02394E8DD00206480 /* GaussianInt.swift */; };
 		876A76B42394EBED00206480 /* FloatingPointMath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876A76B32394EBED00206480 /* FloatingPointMath.swift */; };
 		876A76B62394F04500206480 /* Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876A76B52394F04500206480 /* Frame.swift */; };
+		87D1987723A7545E00EB2299 /* ImageTransformater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D1987623A7545E00EB2299 /* ImageTransformater.swift */; };
+		87D1987E23A7627E00EB2299 /* UIImage+Pixels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D1987D23A7627E00EB2299 /* UIImage+Pixels.swift */; };
 		87F2B5212343453600D751D2 /* Authorization.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87F2B5202343453600D751D2 /* Authorization.storyboard */; };
 		87F2B5252343480500D751D2 /* ResultAuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F2B5242343480500D751D2 /* ResultAuthorizationViewController.swift */; };
 		87F2B5272343539B00D751D2 /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F2B5262343539B00D751D2 /* AlertHelper.swift */; };
@@ -49,6 +51,8 @@
 		876A76B02394E8DD00206480 /* GaussianInt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GaussianInt.swift; sourceTree = "<group>"; };
 		876A76B32394EBED00206480 /* FloatingPointMath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatingPointMath.swift; sourceTree = "<group>"; };
 		876A76B52394F04500206480 /* Frame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Frame.swift; sourceTree = "<group>"; };
+		87D1987623A7545E00EB2299 /* ImageTransformater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTransformater.swift; sourceTree = "<group>"; };
+		87D1987D23A7627E00EB2299 /* UIImage+Pixels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Pixels.swift"; sourceTree = "<group>"; };
 		87F2B5202343453600D751D2 /* Authorization.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authorization.storyboard; sourceTree = "<group>"; };
 		87F2B5242343480500D751D2 /* ResultAuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultAuthorizationViewController.swift; sourceTree = "<group>"; };
 		87F2B5262343539B00D751D2 /* AlertHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
@@ -116,11 +120,20 @@
 			path = Library;
 			sourceTree = "<group>";
 		};
+		87D1987823A75C0600EB2299 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				87D1987D23A7627E00EB2299 /* UIImage+Pixels.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		8E0DD34E239C260100D3F2D9 /* Image */ = {
 			isa = PBXGroup;
 			children = (
 				8E0DD34F239C262000D3F2D9 /* VideoConverter.swift */,
 				8E042B8823A67078009952C1 /* LocalBinaryPatternsManager.swift */,
+				87D1987623A7545E00EB2299 /* ImageTransformater.swift */,
 			);
 			path = Image;
 			sourceTree = "<group>";
@@ -179,6 +192,7 @@
 		8EFD96FD23251FE40087866B /* diplomaiOS */ = {
 			isa = PBXGroup;
 			children = (
+				87D1987823A75C0600EB2299 /* Extensions */,
 				876A76AE2394E8C800206480 /* Library */,
 				8E601FCB2343EE4A002A3AA0 /* Model */,
 				8EFD9715232534AC0087866B /* Util */,
@@ -308,6 +322,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87D1987E23A7627E00EB2299 /* UIImage+Pixels.swift in Sources */,
 				87F2B5252343480500D751D2 /* ResultAuthorizationViewController.swift in Sources */,
 				876A76AC2394D6F700206480 /* PathHelper.swift in Sources */,
 				8EFD970123251FE40087866B /* RegistrationViewController.swift in Sources */,
@@ -318,6 +333,7 @@
 				87F2B5272343539B00D751D2 /* AlertHelper.swift in Sources */,
 				8E601FD32343F37C002A3AA0 /* DynamicProgramming.swift in Sources */,
 				8E601FCD2343EE60002A3AA0 /* Sound.swift in Sources */,
+				87D1987723A7545E00EB2299 /* ImageTransformater.swift in Sources */,
 				8EFD9717232534B80087866B /* VideHelper.swift in Sources */,
 				876A76B62394F04500206480 /* Frame.swift in Sources */,
 				8E35E47C23942F1C004690ED /* MelCharacteristicsManager.swift in Sources */,
