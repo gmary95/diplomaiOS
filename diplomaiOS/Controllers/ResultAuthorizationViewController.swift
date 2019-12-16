@@ -50,12 +50,8 @@ class ResultAuthorizationViewController: UIViewController {
             
             let croppedImage = personciImage.cropped(to: face.bounds)
             
-            let alert = UIAlertController(title: "Say Cheese!", message: "We detected a face!", preferredStyle: UIAlertController.Style.alert)
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-            
             if face.hasSmile {
-                print("face is smiling");
+                print("face is smiling")
             }
             
             if face.hasLeftEyePosition {
