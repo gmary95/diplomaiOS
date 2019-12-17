@@ -16,14 +16,14 @@ public struct PixelData {
 }
 
 class ImageTransformater {
-    var image: UIImage
-    var context = CIContext(options: nil)
+    private var image: UIImage
+    private var context = CIContext(options: nil)
     
     init(image: UIImage) {
         self.image = image
     }
     
-    func convertToGrayscaleNoir() -> UIImage? {
+    public func convertToGrayscaleNoir() -> UIImage? {
         if let currentFilter = CIFilter(name: "CIPhotoEffectNoir") {
             currentFilter.setValue(CIImage(image: self.image), forKey: kCIInputImageKey)
             if let output = currentFilter.outputImage {
@@ -36,15 +36,15 @@ class ImageTransformater {
         return nil
     }
     
-    func convertImageToPixelsArray() -> [[PixelData]]? {
+    public func convertImageToPixelsArray() -> [[PixelData]]? {
         guard let pixelsArr = self.image.pixelData() else { return nil }
         let width: Int = Int(self.image.size.width)
         let height: Int = Int(self.image.size.height)
         
-        var newArr = [[PixelData]](repeating: [PixelData](repeating: PixelData(a: 0, r: 0, g: 0, b: 0), count: width), count: height)
+        var newArr = [[PixelData]](repeating: [PixelData](repeating: PixelData(a: 0, r: 0, g: 0, b: 0), count: width + 2), count: height + 2)
         
-        for i in 0 ..< height {
-            for j in 0 ..< width {
+        for i in 1 ..< height {
+            for j in 1 ..< width {
                 let index = (i * 4) + (j * 4)
                 newArr[i][j] = PixelData(a: pixelsArr[index + 3], r: pixelsArr[index], g: pixelsArr[index + 1], b: pixelsArr[index + 2])
             }

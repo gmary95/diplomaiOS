@@ -14,19 +14,19 @@ class LocalBinaryPatternsManager {
         return instance
     }()
     
-    func sratrProccess(matrix: [[Double]]) -> Int {
+    public func sratrProccess(matrix: [[UInt8]]) -> Int {
         let arr = transform(matrix: matrix)
         let binaryArr = transform(array: arr)
         let num = binaryToInt(binaryArr: binaryArr)
         return num
     }
     
-    func transform(matrix: [[Double]]) -> [Double] {
+    private func transform(matrix: [[UInt8]]) -> [UInt8] {
         return matrix.flatMap { $0 }
     }
     
-    func transform(array: [Double]) -> [Int8] {
-        var newMatrix = [Int8]()
+    private func transform(array: [UInt8]) -> [UInt8] {
+        var newMatrix = [UInt8]()
         let middleIndex = array.count == 0 ? 0 : (array.count / 2) - 1
         let threshold = array[middleIndex]
         for i in 0 ..< array.count {
@@ -37,7 +37,7 @@ class LocalBinaryPatternsManager {
         return newMatrix
     }
     
-    func returnBinaryCode(threshold: Double, value: Double) -> Int8 {
+    private func returnBinaryCode(threshold: UInt8, value: UInt8) -> UInt8 {
         if value >= threshold {
             return 1
         } else {
@@ -45,7 +45,7 @@ class LocalBinaryPatternsManager {
         }
     }
     
-    func binaryToInt(binaryArr: [Int8]) -> Int {
+    private func binaryToInt(binaryArr: [UInt8]) -> Int {
         let binary: String = (binaryArr.map { String($0) }).joined(separator: "")
         if let number = Int(binary, radix: 2) {
            return number

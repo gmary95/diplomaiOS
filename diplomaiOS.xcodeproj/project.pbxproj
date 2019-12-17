@@ -15,6 +15,7 @@
 		876A76B22394E8DD00206480 /* GaussianInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876A76B02394E8DD00206480 /* GaussianInt.swift */; };
 		876A76B42394EBED00206480 /* FloatingPointMath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876A76B32394EBED00206480 /* FloatingPointMath.swift */; };
 		876A76B62394F04500206480 /* Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876A76B52394F04500206480 /* Frame.swift */; };
+		87C49B8023A8BA8A007E0241 /* MatrixTransformater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C49B7F23A8BA8A007E0241 /* MatrixTransformater.swift */; };
 		87D1987723A7545E00EB2299 /* ImageTransformater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D1987623A7545E00EB2299 /* ImageTransformater.swift */; };
 		87D1987E23A7627E00EB2299 /* UIImage+Pixels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D1987D23A7627E00EB2299 /* UIImage+Pixels.swift */; };
 		87F2B5212343453600D751D2 /* Authorization.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87F2B5202343453600D751D2 /* Authorization.storyboard */; };
@@ -51,6 +52,7 @@
 		876A76B02394E8DD00206480 /* GaussianInt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GaussianInt.swift; sourceTree = "<group>"; };
 		876A76B32394EBED00206480 /* FloatingPointMath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatingPointMath.swift; sourceTree = "<group>"; };
 		876A76B52394F04500206480 /* Frame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Frame.swift; sourceTree = "<group>"; };
+		87C49B7F23A8BA8A007E0241 /* MatrixTransformater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatrixTransformater.swift; sourceTree = "<group>"; };
 		87D1987623A7545E00EB2299 /* ImageTransformater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTransformater.swift; sourceTree = "<group>"; };
 		87D1987D23A7627E00EB2299 /* UIImage+Pixels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Pixels.swift"; sourceTree = "<group>"; };
 		87F2B5202343453600D751D2 /* Authorization.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authorization.storyboard; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 				8E0DD34F239C262000D3F2D9 /* VideoConverter.swift */,
 				8E042B8823A67078009952C1 /* LocalBinaryPatternsManager.swift */,
 				87D1987623A7545E00EB2299 /* ImageTransformater.swift */,
+				87C49B7F23A8BA8A007E0241 /* MatrixTransformater.swift */,
 			);
 			path = Image;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 				8E601FCA2343EE16002A3AA0 /* AudioManager.swift in Sources */,
 				876A76B12394E8DD00206480 /* Complex.swift in Sources */,
 				8EFD96FF23251FE40087866B /* AppDelegate.swift in Sources */,
+				87C49B8023A8BA8A007E0241 /* MatrixTransformater.swift in Sources */,
 				8E601FD12343F0F5002A3AA0 /* NormalizationAndLatentPeriodsRemover.swift in Sources */,
 				8EFD9714232532F10087866B /* VideoCaptureViewController.swift in Sources */,
 			);

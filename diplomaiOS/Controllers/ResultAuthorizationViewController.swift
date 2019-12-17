@@ -26,7 +26,8 @@ class ResultAuthorizationViewController: UIViewController {
             if let detectedImage = detect(image: imageFromVideo){
                 guard let grayImage = ImageTransformater(image: detectedImage).convertToGrayscaleNoir() else { return }
                 guard let pixels = ImageTransformater(image: grayImage).convertImageToPixelsArray() else { return }
-                let intensityArr: [[UInt8]] = pixels.map{ $0.map { return $0.r } }
+                let intensityArr: [[UInt8]] = pixels.map{ $0.map{ return $0.r } }
+                let characteristicsMatrix = MatrixTransformater(matrix: intensityArr).getCharacteristicsMatrix()
                 
                 let imageView = UIImageView(image: grayImage)
                 imageView.contentMode = .scaleAspectFit
@@ -118,5 +119,16 @@ class ResultAuthorizationViewController: UIViewController {
         let cgImage:CGImage = context.createCGImage(cmage, from: cmage.extent)!
         let image:UIImage = UIImage.init(cgImage: cgImage)
         return image
+    }
+    
+    func printMatrix(matrix: [[Int]]) {
+        var str = ""
+        for i in 0 ..< matrix.count {
+            for j in 0 ..< matrix[i].count {
+                str += matrix[i][j].description + ", "
+            }
+            str += "$\n"
+        }
+        print(str)
     }
 }
