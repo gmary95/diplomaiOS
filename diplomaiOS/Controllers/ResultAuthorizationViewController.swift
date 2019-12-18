@@ -28,6 +28,8 @@ class ResultAuthorizationViewController: UIViewController {
                 guard let pixels = ImageTransformater(image: grayImage).convertImageToPixelsArray() else { return }
                 let intensityArr: [[UInt8]] = pixels.map{ $0.map{ return $0.r } }
                 let characteristicsMatrix = MatrixTransformater(matrix: intensityArr).getCharacteristicsMatrix()
+                let submatrix = getSubmatrix(characteristicsMatrix, i0: 0, i1: 9, j0: 0, j1: 9)
+                let histogram = Histogram().calculate(matrix: submatrix)
                 
                 let imageView = UIImageView(image: grayImage)
                 imageView.contentMode = .scaleAspectFit
@@ -130,5 +132,15 @@ class ResultAuthorizationViewController: UIViewController {
             str += "$\n"
         }
         print(str)
+    }
+    
+    func getSubmatrix(_ matrix: [[Int]], i0: Int, i1: Int, j0: Int, j1: Int) -> [[Int]] {
+        var result = [[Int]]()
+
+        for row in Array(matrix[i0...i1]) {
+             result.append(Array(row[j0...j1]))
+        }
+
+        return result
     }
 }
