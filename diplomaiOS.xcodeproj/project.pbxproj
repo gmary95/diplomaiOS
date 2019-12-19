@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		87097E122341E0B000AEDA0F /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87097E112341E0B000AEDA0F /* CustomTextField.swift */; };
+		87437CA423AB4D4F0022F773 /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87437CA323AB4D4F0022F773 /* ImageHelper.swift */; };
+		87437CA623AB4ED20022F773 /* FileHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87437CA523AB4ED20022F773 /* FileHelper.swift */; };
 		87489E97239E23A10069F286 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87489E96239E23A10069F286 /* opencv2.framework */; };
 		876A76AA2394D4EC00206480 /* test.wav in Resources */ = {isa = PBXBuildFile; fileRef = 876A76A92394D4EC00206480 /* test.wav */; };
 		876A76AC2394D6F700206480 /* PathHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876A76AB2394D6F700206480 /* PathHelper.swift */; };
@@ -46,6 +48,8 @@
 
 /* Begin PBXFileReference section */
 		87097E112341E0B000AEDA0F /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		87437CA323AB4D4F0022F773 /* ImageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
+		87437CA523AB4ED20022F773 /* FileHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileHelper.swift; sourceTree = "<group>"; };
 		87489E96239E23A10069F286 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
 		876A76A92394D4EC00206480 /* test.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = test.wav; sourceTree = "<group>"; };
 		876A76AB2394D6F700206480 /* PathHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathHelper.swift; sourceTree = "<group>"; };
@@ -139,6 +143,7 @@
 				8E042B8823A67078009952C1 /* LocalBinaryPatternsManager.swift */,
 				87D1987623A7545E00EB2299 /* ImageTransformater.swift */,
 				87C49B7F23A8BA8A007E0241 /* MatrixTransformater.swift */,
+				87437CA323AB4D4F0022F773 /* ImageHelper.swift */,
 			);
 			path = Image;
 			sourceTree = "<group>";
@@ -250,6 +255,7 @@
 				87F2B5262343539B00D751D2 /* AlertHelper.swift */,
 				8E601FD22343F37C002A3AA0 /* DynamicProgramming.swift */,
 				876A76AB2394D6F700206480 /* PathHelper.swift */,
+				87437CA523AB4ED20022F773 /* FileHelper.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -344,6 +350,8 @@
 				8EFD9717232534B80087866B /* VideHelper.swift in Sources */,
 				876A76B62394F04500206480 /* Frame.swift in Sources */,
 				8E35E47C23942F1C004690ED /* MelCharacteristicsManager.swift in Sources */,
+				87437CA423AB4D4F0022F773 /* ImageHelper.swift in Sources */,
+				87437CA623AB4ED20022F773 /* FileHelper.swift in Sources */,
 				8E042B8923A67078009952C1 /* LocalBinaryPatternsManager.swift in Sources */,
 				876A76B42394EBED00206480 /* FloatingPointMath.swift in Sources */,
 				8E601FCA2343EE16002A3AA0 /* AudioManager.swift in Sources */,

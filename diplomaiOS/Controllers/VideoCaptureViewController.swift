@@ -17,6 +17,7 @@ class VideoCaptureViewController: UIViewController, AVAudioPlayerDelegate {
     let videoFileName = "/video.mp4"
     let audioFileName = "/sample_audio.m4a"
     let audioWAVFileName = "/sample_audio.wav"
+    let histogramFileName = "/imageModelHistogram.txt"
     let maxVideoTimeInSeconds: TimeInterval = 3
     
     var urlVideo: URL? = nil
@@ -45,9 +46,15 @@ class VideoCaptureViewController: UIViewController, AVAudioPlayerDelegate {
         
         let start = 0
         let finish = soundNorm.count - 1
-        let mfcc = Frame(sourceNormalized: soundNorm, start: start, finish: finish).initMFCC(source: soundNorm, start: start, finish: finish, freq: Int(audioManager.sampleRate))
+//        let mfcc = Frame(sourceNormalized: soundNorm, start: start, finish: finish).initMFCC(source: soundNorm, start: start, finish: finish, freq: Int(audioManager.sampleRate))
+//
+//        print(mfcc)
         
-        print(mfcc)
+        if let histogram = ImageHelper().preprocessing(fileName: videoFileName) {
+            
+            let fileUrl = PathHelper.createPathInDocument(fileName: histogramFileName)
+            FileHelper().writeToFile(array: histogram, fileUrl: fileUrl)
+        }
     }
     
     @IBAction func startRecordVideo(_ sender: UIButton) {
