@@ -18,6 +18,10 @@ class Histogram {
     }
     
     func calculate(matrix: [[Int]]) -> [(key: Int, value: Int)] {
+        let keys = createArray(from: 0, delta: 1, count: 256)
+        let values = createArray(from: 0, delta: 0, count: 256)
+        self.data = Dictionary(uniqueKeysWithValues: zip(keys, values))
+        
         for i in 0 ..< matrix.count {
             for j in 0 ..< matrix[i].count {
                 let item = matrix[i][j]
@@ -32,5 +36,13 @@ class Histogram {
         
         sortedData = data.sorted(by: { $0.0 < $1.0 })
         return sortedData
+    }
+    
+    private func createArray(from: Int, delta: Int, count: Int) -> [Int] {
+        var arr = [Int](repeating: 0, count: count)
+        for i in 1 ..< count {
+            arr[i] = arr[i - 1] + delta
+        }
+        return arr
     }
 }

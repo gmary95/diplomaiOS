@@ -9,16 +9,35 @@
 import Foundation
 
 struct ImageHelper {
-    func preprocessing(fileName: String) -> [(key: Int, value: Int)]? {
-        let imageFromVideo = VideoConverter.imageFromVideo(url: PathHelper.createPathInDocument(fileName: fileName), at: 2)
+    let times = 8
+    
+    func preprocessing(fileName: String, time: Int) -> [(key: Int, value: Int)]? {
+        let imageFromVideo = VideoConverter.imageFromVideo(url: PathHelper.createPathInDocument(fileName: fileName), at: TimeInterval(time))
         if let detectedImage = detect(image: imageFromVideo){
-            guard let grayImage = ImageTransformater(image: detectedImage).convertToGrayscaleNoir() else { return nil}
-            guard let pixels = ImageTransformater(image: grayImage).convertImageToPixelsArray() else { return nil}
-            let intensityArr: [[UInt8]] = pixels.map{ $0.map{ return $0.r } }
-            let characteristicsMatrix = MatrixTransformater(matrix: intensityArr).getCharacteristicsMatrix()
-            let histogram = Histogram().calculate(matrix: characteristicsMatrix)
+            var histogram = [(key: Int, value: Int)]()
+            let imageTitles = self.divide(image: detectedImage)
+            
+            for i in 0 ..< imageTitles.count {
+                for j in 0 ..< imageTitles[i].count {
+                    if let h = startProcess(image: imageTitles[i][j]) {
+                        histogram.append(contentsOf: h)
+                    }
+                }
+            }
+            
             return histogram
         }
+        return nil
+    }
+    
+    func startProcess(image: UIImage) -> [(key: Int, value: Int)]? {
+        guard let grayImage = ImageTransformater(image: image).convertToGrayscaleNoir() else { return nil}
+        guard let pixels = ImageTransformater(image: grayImage).convertImageToPixelsArray() else { return nil}
+        let intensityArr: [[UInt8]] = pixels.map{ $0.map{ return $0.r } }
+        let characteristicsMatrix = MatrixTransformater(matrix: intensityArr).getCharacteristicsMatrix()
+        
+        let histogram = Histogram().calculate(matrix: characteristicsMatrix)
+        return histogram
     }
     
     private func detect(image: UIImage?) -> UIImage? {
@@ -119,5 +138,32 @@ struct ImageHelper {
         }
 
         return result
+    }
+    
+    private func divide(image: UIImage) -> [[UIImage]] {
+        let height =  (image.size.height) /  CGFloat (times) //height of each image tile
+        let width =  (image.size.width)  / CGFloat (times)  //width of each image tile
+        
+        let scale = (image.scale) //scale conversion factor is needed as UIImage make use of "points" whereas CGImage use pixels.
+        
+        var imageArr = [[UIImage]]() // will contain small pieces of image
+        for y in 0 ..< times {
+            var yArr = [UIImage]()
+            for x in 0 ..< times {
+                
+                UIGraphicsBeginImageContextWithOptions(
+                    CGSize(width:width, height:height),
+                    false, 0)
+                let i =  image.cgImage?.cropping(to:  CGRect.init(x: CGFloat(x) * width * scale, y:  CGFloat(y) * height * scale  , width: (width * scale) , height: (height * scale)) )
+                
+                let newImg = UIImage.init(cgImage: i!)
+                
+                yArr.append(newImg)
+                
+                UIGraphicsEndImageContext()
+            }
+            imageArr.append(yArr)
+        }
+        return imageArr
     }
 }

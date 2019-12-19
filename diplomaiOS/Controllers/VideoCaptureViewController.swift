@@ -50,10 +50,15 @@ class VideoCaptureViewController: UIViewController, AVAudioPlayerDelegate {
 //
 //        print(mfcc)
         
-        if let histogram = ImageHelper().preprocessing(fileName: videoFileName) {
-            
-            let fileUrl = PathHelper.createPathInDocument(fileName: histogramFileName)
+        let fileUrl = PathHelper.createPathInDocument(fileName: histogramFileName)
+        
+        if let histogram = ImageHelper().preprocessing(fileName: videoFileName, time: 2) {
             FileHelper().writeToFile(array: histogram, fileUrl: fileUrl)
+        }
+        
+        if let h1 = FileHelper().readImageModel(fileUrl: fileUrl), let h2 = ImageHelper().preprocessing(fileName: videoFileName, time: 1) {
+            let isSame = FaceRecognizer(modelHistogram: h1, recognisionHistogram: h2).calculateDistance()
+            print(isSame)
         }
     }
     
